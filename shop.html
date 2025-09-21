@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dalwa's Kitchen — Marketplace</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Dalwa's Kitchen</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Marketplace</a>
+      <a href="vendor.html">Vendor Dashboard</a>
+      <a href="buyer.html">Buyer Account</a>
+      <a href="admin.html">Admin</a>
+      <a id="cart-link" href="#cart">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Marketplace</h2>
+      <div class="filters">
+        <input id="q" placeholder="Search products" oninput="renderProducts()" />
+        <select id="price-filter" onchange="renderProducts()">
+          <option value="any">Any price</option>
+          <option value="0-500">0 - 500</option>
+          <option value="500-1500">500 - 1500</option>
+          <option value="1500-999999">1500+</option>
+        </select>
+        <select id="location-filter" onchange="renderProducts()">
+          <option value="any">Any location</option>
+          <option value="Local">Local</option>
+          <option value="City">City</option>
+        </select>
+      </div>
+
+      <div id="products" class="items-grid"></div>
+    </section>
+
+    <aside id="cart" class="cart">
+      <h3>Cart</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total">Total: ₦<span id="cart-total">0</span></div>
+      <label><input type="radio" name="pay" value="cod" checked> Cash on Delivery</label>
+      <label><input type="radio" name="pay" value="online"> Online (simulated)</label>
+      <button onclick="checkout()">Checkout</button>
+      <div id="checkout-msg"></div>
+    </aside>
+  </main>
+
+<script src="app.js"></script>
+<script>
+  renderProducts();
+  updateCartCount();
+</script>
+</body>
+</html>

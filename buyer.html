@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dalwa's Kitchen — Buyer Account</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Buyer Account</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Marketplace</a>
+      <a href="vendor.html">Vendor Dashboard</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Login / Profile</h2>
+      <input id="buyer-name" placeholder="Your name" />
+      <button onclick="loginBuyer()">Login</button>
+      <div id="buyer-msg"></div>
+    </section>
+
+    <section>
+      <h2>Favorites</h2>
+      <div id="favorites"></div>
+    </section>
+
+    <section>
+      <h2>Past Orders</h2>
+      <div id="past-orders"></div>
+    </section>
+  </main>
+
+<script src="app.js"></script>
+<script>
+  renderBuyer();
+</script>
+</body>
+</html>

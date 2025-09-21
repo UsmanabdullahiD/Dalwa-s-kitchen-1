@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dalwa's Kitchen — Vendor Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Vendor Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Marketplace</a>
+      <a href="buyer.html">Buyer Account</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Register / Login</h2>
+      <input id="vendor-name" placeholder="Vendor name" />
+      <input id="vendor-location" placeholder="Location (Local/City)" />
+      <button onclick="registerVendor()">Register (creates pending vendor)</button>
+      <div id="vendor-register-msg"></div>
+    </section>
+
+    <section>
+      <h2>Post New Item</h2>
+      <input id="item-title" placeholder="Item title (e.g. Loaded Awara)" />
+      <input id="item-price" placeholder="Price (₦)" type="number" />
+      <input id="item-category" placeholder="Category (Food/Drinks/etc)" />
+      <input id="item-location" placeholder="Location (Local/City)" />
+      <input id="item-image" placeholder="Image URL (optional)" />
+      <textarea id="item-desc" placeholder="Short description"></textarea>
+      <button onclick="postItem()">Post Item (goes to pending until admin approves)</button>
+      <div id="post-msg"></div>
+    </section>
+
+    <section>
+      <h2>Your Products</h2>
+      <div id="vendor-products"></div>
+    </section>
+
+    <section>
+      <h2>Orders</h2>
+      <div id="vendor-orders"></div>
+    </section>
+  </main>
+
+<script src="app.js"></script>
+<script>
+  renderVendor();
+</script>
+</body>
+</html>
